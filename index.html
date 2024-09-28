@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <title>MY PORTFOLIO</title>
+   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+   <style>
+    body{
+    background-color:#121212;
+    color:#ffffff;
+  }
+  *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      color:#ffffff;
+      font-family:Times New Roman;
+      list-style:none;   
+  }
+  header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;       
+      background-color:#444444;
+      padding:35px 12%;
+      display:flex;
+      justify-content:space-evenly;
+      backdrop-filter: blur(20px);
+      align-items:center;
+      z-index:100;
+      font-size:25px;
+      border:2px solid #444444;
+  }
+  #navbar a:hover{
+      color:#66cc00;
+      transition: 0.3s ease;
+      border-bottom:3px solid transparent;
+      
+  }
+  #navbar a:active{
+      color:#66cc00;
+      transform:scale(1.3);
+  }
+  #contact{
+      padding:10px 20px;
+     background-color:white;
+      color:black;
+      border:2px solid transparent;
+      font-size:15px;
+      border-radius:12px;
+      transition:0.1s ease;
+  }
+  .home{
+      width:100%;
+      min-height:100vh;
+      background-color:#121212;
+      display:flex;
+      position:absolute;
+      align-items:center;
+      gap:10em;
+      padding:30px 12% 0;
+  }
+  .home-content{
+      max-width:800px;
+  }
+ .home-content h1{
+      font-size:45px;
+      font-family:Helvetica;
+      margin:0 auto;
+      padding:170px 50px 10px 50px;
+  } 
+  .home-content h2{
+      font-size:30px;
+      margin:0 auto;  
+      padding:0px 50px 70px 50px;
+  }
+  span{
+      color:#66cc00;
+  }
+  
+  .btn-1{
+      padding: 1px 2px;
+      background-color:#66cc00;
+      color:#ffffff;
+      border:1px solid black;
+      border-radius:8px;
+      font-size:20px;
+      transition:0.3s ease;
+      cursor:pointer;
+      display:flex;
+      gap:2em;
+      margin:0 auto;
+width:12vh;
+  }
+  .btn-1:hover{
+      background-color:#008000;
+      color:#ffffff;
+      border:2px solid transparent;
+  }
+  ::-webkit-scrollbar{
+      width:25px;
+       background-color:#555555;
+  }
+  ::-webkit-scrollbar-thumb{
+      background-color:#66cc00;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+      background-color:#008000;
+  }
+  ::-webkit-scrollbar-thumb:active{
+      background-color:#004400;
+  }
+  
+  table, th ,tr, td{
+      display:position; 
+      border:2px solid #555555;
+      color:#454545;
+      border-collapse:collapse;
+      transition:0.3s ease;
+  }
+  table{
+      width:75%;
+      align-items:center;
+      margin:auto;
+      background-color:#f7f7f7;
+  }
+  td{
+      height:70px;
+      text-align:center;
+      font-weight:bold;
+      background-color:#444444;
+      color:#ffffff;
+  }
+  th{
+      text-align:center;
+      padding:0.5rem;
+      background-color:#333333;
+      color:#ffffff;
+  }
+  #Education, #Skills,#Projects,#Experience{
+      color:#66cc00;
+      font-size:50px;
+      text-align:center;
+      padding:15px;
+  }
+  #int{
+      color:#9c27b0;
+      font-size:40px;
+      text-align:center;
+  }
+  #int-h{
+      color:#ff9800;
+      font-size:30px;
+      text-align:center;
+  }
+  #date{
+       color:#9c27b0;
+       font-size:20px;
+       text-align:center;
+  }
+  ul{
+      color:#f7f7f7;
+      text-align:center;
+      padding: 20px 170px;
+      font-size:20px; 
+      margin:0 auto;  
+  }
+  dl,dd.dt{
+      text-align:center;   
+  }
+  dl{
+      background-color:#333333;
+  }
+  dt{
+      font-size:30px;      color:#ff9800;
+  }
+  dd{
+      font-size:20px;
+      list-style-type:upper-roman;
+      color:#ffffff;
+  }
+  dd:hover{
+      background-color:#ffc080;
+      color:black;
+      transform:scale(1.3);
+  }
+  #proj-head{
+      color:#009688;
+      font-size:40px; 
+      text-align:center;
+  }
+  #proj-head:hover{
+      color:#c5cae9;
+      transform:scale(1.1);
+  }
+  .proj-desc{
+      color:#f7f7f7;
+      font-size:20px; 
+      text-align:justify;
+      padding:20px 70px;
+  }
+  video{
+      margin:0 auto;
+      display:block;
+  }
+  .contact-form{
+    max-width:50em;
+    margin: 1rem auto;
+    margin-bottom: 3em;
+  }
+  .contact-form h2{
+    text-align:center;
+    margin-top:3em;
+    margin-bottom:1em;
+    font-size:35px
+  }
+  .contact-form form .input-box{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;  
+  }
+  .contact-form form .input-box input,
+  .contact-form form .textarea{
+    width:100%;
+    padding:1.5em;
+    font-size:18px;
+    color: black;
+    background-color:white;
+    border-radius:.8rem;
+    margin:1rem 0;
+    resize:none;
+  }
+  .footer{
+    position:relative;
+    bottom:0;
+    width:100%;
+    padding:40px 0;
+    background-color:black;
+  }
+  .footer, .social{
+    text-align:center;
+    padding-bottom:24px;
+    color:white;
+  }
+  .footer .social a{
+    font-size:24px;
+    color:white;
+    border:2px solid #33cc33;
+    width:40px;
+    height:40px;
+    line-height:5px;
+    display:inline-block;
+    text-align:center;
+    border-radius:45%;
+    margin:0 8px;
+    box-shadow: inset 0 0 10px #33cc33,0 0 10px #33cc33;
+    transition:0.3s ease;
+}
+.footer .social a:hover{
+  transform:scale(1.2) translateY(-10px);
+  color:#39ff14;
+  border:2px solid #39ff14;
+  }
+i{
+  margin:0 auto;
+}
+img{
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+  padding:50px 0px;
+}
+#live, #hard{
+ color:#white;
+text-align:center;
+font-size:25px;
+}
+#Contact{
+padding-top:30px;
+font-size:50px;
+margin-left:auto;
+margin-right:auto;
+text-align:center;
+}
+
+  /* Add this to make the website responsive */
+        @media only screen and (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+            header {
+                padding: 20px 10%;
+                flex-wrap: wrap;
+            }
+            #navbar {
+                flex-basis: 100%;
+                text-align: center;
+            }
+            #navbar a {
+                margin: 10px;
+            }
+            .home {
+                flex-direction: column;
+                padding:30px 12% 0;
+            }
+            .home-content {
+                max-width: 100%;
+                padding: 100px 50px 10px 50px;
+            }
+            .home-content h1 {
+                font-size: 30px;
+                padding:170px 50px 10px 50px;
+            }
+            .home-content h2 {
+                font-size: 20px;
+                padding:0px 50px 70px 50px;
+            }
+            .btn-1{
+                padding: 1px 2px;
+                background-color:#66cc00;
+                color:#ffffff;
+                border:1px solid black;
+                border-radius:8px;
+                font-size:16px;
+                transition:0.3s ease;
+                cursor:pointer;
+                display:flex;
+                gap:2em;
+                margin:0 auto;
+            }
+            #ed table {
+                width: 100%;
+            }
+            #proj-head {
+                font-size: 25px;
+            }
+            .proj-desc {
+                padding: 10px;
+            }
+            img {
+                width: 100%;
+            }
+            .footer {
+                padding: 10px;
+            }
+            .social a {
+                margin: 5px;
+                flex-basis:100%;
+            }
+            ul {
+                padding: 10px;
+            }
+            li {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            .contact-form {
+                max-width: 100%;
+                margin: 10px;
+            }
+            .contact-form h2 {
+                font-size: 20px;
+            }
+            .contact-form form .input-box {
+                flex-direction: column;
+            }
+            .contact-form form .input-box input, .contact-form form .textarea {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+            }
+#ed table {
+  max-width: 100%;
+  width: 100%;
+  table-layout: fixed;
+font-size:9px;
+}
+
+#ed table th, #ed table td {
+  width: 25%;
+  overflow-wrap: break-word;
+  font-size:9px;
+}
+            dl {
+                padding: 10px;
+            }
+            dt {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            dd {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Add this for even smaller screens */
+        @media only screen and (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+            header {
+                padding: 15px 5%;
+            }
+            #navbar a {
+                margin: 5px;
+            }
+            .home-content h1 {
+                font-size: 25px;
+                padding: 30px 5px 10px;
+            }
+            .home-content h2 {
+                font-size: 18px;
+                padding: 0 5px 15px;
+            }
+             .btn-1{
+                padding: 1px 2px;
+                background-color:#66cc00;
+                color:#ffffff;
+                border:1px solid black;
+                border-radius:8px;
+                font-size:14px;
+                transition:0.3s ease;
+                cursor:pointer;
+                display:flex;
+                gap:2em;
+                margin:0 auto;
+            }
+
+            #proj-head {
+                font-size: 20px;
+            }
+            .proj-desc {
+                padding: 5px;
+            }
+            ul {
+                padding: 5px;
+            }
+            li {
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+            .contact-form {
+                margin: 5px;
+            }
+            .contact-form h2 {
+                font-size: 18px;
+            }
+            .contact-form form .input-box input, .contact-form form .textarea {
+                padding: 5px;
+                font-size: 14px;
+            }
+            dl {
+                padding: 5px;
+            }
+            dt {
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+            dd {
+                font-size: 12px;
+                margin-bottom: 5px;
+            }
+            .social a {
+                font-size: 18px;
+                margin: 5px;
+            }
+            #ed table {
+  max-width: 100%;
+  width: 100%;
+  table-layout: fixed;
+font-size:9px;
+}
+
+#ed table th, #ed table td {
+  width: 25%;
+  overflow-wrap: break-word;
+font-size:9px;
+}
+
+        }
+
+   </style>
+</head>
+<body>
+  <header class="flex-container">
+     <a href="#" class="active">PORTFOLIO</a>
+    <nav id="navbar">
+      <a href="#Home">About</a>
+      <a href="#Education">Education</a>
+      <a href="#Experience">Experience</a>
+      <a href="#Skills">Skills</a>
+      <a href="#Projects">Projects</a> 
+      <a href="#Contact">Contact</a>
+    </nav>
+  </header>
+      <p><a href="#Contact Me" id="contact">Contact Me</a></p>
+  <!--home-->
+  <section class="Home" id="Home">
+    <div class="home-content">
+      <h1 class="main-head">HEY THERE, I AM <span>SYEDA MUBASHSHIRA Y</span></h1>
+      <h2 class="descripton">I am an Electronics And Instrumentation Student at Velammal Engineering College</h2>
+    </div>
+    <div class="btn-1">
+      <button class="btn-1" id="open-pdf">Resume</button>
+<script>
+    const downloadPdfButton = document.getElementById('open-pdf');
+
+  downloadPdfButton.addEventListener('click', () => {
+  const link = document.createElement('a');
+  link.href = 'resume_syeda_mubashshira%20_y.pdf';
+  link.download = 'resume_syeda_mubashshira _y.pdf';
+  link.target='_blank';
+  link.click();
+});
+        
+</script>
+    </div>
+    </section>
+     <!--Education-->
+     <div class="edu">
+      <section id="Education">EDUCATION</section>
+      <div id="ed">
+      <table id="table">
+        <tr>
+          <th>Degree<br>Specialization</th>
+          <th>Institution</th>
+          <th>Board/University</th>
+          <th>Year of Passing</th>
+          <th>Percentage/<br>CGPA</th>
+        </tr>
+        <tr>
+          <th>BE EIE<br>(Pursuing)</th>
+          <th>Velammal Engineering College</th>
+          <th>Anna University</th>
+          <th>-</th>
+          <th>9.08(upto 4th semester)</th>
+        </tr>
+        <tr>
+          <th>HSLC</th>
+          <th>CSI Ewart Mat.Hr.Sec.School</th>
+          <th>Tamil Nadu</th>
+          <th>2022</th>
+          <th>91.2%</th>
+        </tr>
+        <tr>
+          <th>SSLC</th>
+          <th>CSI Ewart Mat.Hr.Sec.School</th>
+          <th>Tamil Nadu</th>
+          <th>2020</th>
+          <th>81.8%</th>
+        </tr>
+      </table>
+      </div>
+  <!--Experience-->
+  <section id="Experience">EXPERIENCE</section>
+  <h1 id="int">Internships</h1>
+  <h3 id="int-h">Embedded Systems Intern</h3>
+  <h4 id="int-h">Organization-DLK Career Development</h4>
+  <p id="date">04/06/2024-08/06/2024</p>
+ <ul>
+   <li>Gained hands-on experience with Arduino</li>
+    <li>Learned programming using Arduino IDE</li>
+    <li>Worked with various sensors and modules</li>
+    <li>Utilized Proteus 8 Professional software for circuit design and simulation</li>
+  </ul>
+  <!--Skills-->
+  <section class="Skills" id="Skills">SKILLS</section>
+  <dl>
+    <dt>Programming Languages</dt>
+    <dd>C</dd>
+    <dd><Python</dd>
+    <dd>C++</dd>
+    <dd>Java</dd>
+  </dl>
+  <dl>
+    <dt>Frontend-Web Technologies</dt>
+    <dd>HTML</dd>
+    <dd>CSS</dd>
+    <dd>Javascript</dd>
+  </dl>
+  <dl>
+    <dt>Embedded Systems</dt>
+    <dd>Arduino</dd>
+    <dd>Raspberry Pi</dd>
+  </dl>
+<!--Projects-->
+
+   <section id="Projects">PROJECTS</section>
+  <div id="proj-head">VIRTUAL TELEPRESENCE ROBOT USING RASPBERRY PI</div>
+  <p class="proj-desc">A telepresence robot system integrates Arduino and Raspberry Pi to achieve remote navigation and real-time video streaming. In the process, users are able to control the movement of the robot via Bluetooth and view high-quality video through a user-friendly interface. The experimental results prove to be cost-effective and efficient for remote meetings and educational settings by showing its effectiveness in remote collaboration and social engagement.</p>
+  <figure>
+  <img src="tele.jpeg" width="500" height="500">
+  <figcaption id="hard" style="color:#ff9800">HARWARE SETUP</figcaption>
+  <img src="telep.jpeg" width="500" height="500">
+  <figcaption id="live" style="color:#ff9800">LIVE STREAMING</figcaption>
+  </figure>
+      <!--Contact-->  
+<section><h2 class="contact-me" id="Contact" class="cont">CONTACT <span>INFO</span></h2></section>
+          <footer class="footer">
+            <div class="social">
+              <a href="https://github.com/syeda-mubashshira"><i style="color:#33cc33; font-size:32px" class="fa">&#xf09b;</i></a>
+              <a href="mailto: syedamubashshira30@gmail.com" target="_blank"><i style="color:#33cc33;font-size:32px" class="fa">&#xf1a0;</i></a>
+              <a href="https://www.linkedin.com/in/syeda-mubashshira-y-b3a491300/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i style="color:#33cc33;font-size:32px" class="fa">&#xf0e1;</i></a>              
+            </div>  
+            </footer>        
+    </body>
+    </html>
